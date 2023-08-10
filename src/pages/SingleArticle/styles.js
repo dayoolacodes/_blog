@@ -4,8 +4,9 @@ export const Container = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
   .img-wrapper {
     max-width: 800px;
     margin: 100px 50px;

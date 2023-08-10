@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Container } from "./styles";
 import { useNavigate } from "react-router-dom";
 import { createMarkup } from "utils";
@@ -6,14 +6,12 @@ import { createMarkup } from "utils";
 function Index({ post, ...props }) {
   const navigate = useNavigate();
 
-
-
   const loadFullPost = () => {
     navigate(`/id=${post?.id}`);
   };
 
   return (
-    <Container {...props}>
+    <Container className="article" {...props}>
       <div className="text">
         <h4 className="title" dangerouslySetInnerHTML={createMarkup(post?.title?.rendered)} />
         <p className="subtitle" dangerouslySetInnerHTML={createMarkup(post?.excerpt?.rendered)} />
