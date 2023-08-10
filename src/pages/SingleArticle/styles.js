@@ -33,5 +33,5 @@ a{
           flex-wrap: wrap;
       }
     }
-  }
+  } 
 `;
