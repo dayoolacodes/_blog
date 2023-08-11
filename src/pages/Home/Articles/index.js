@@ -22,7 +22,7 @@ function Index() {
         });
       })}
       <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
-        <button onClick={fetchNextPage}>
+        <button onClick={fetchNextPage} disabled={isFetchingNextPage}>
           {isFetchingNextPage
             ? "Loading more..."
             : hasNextPage

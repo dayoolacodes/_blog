@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import { Container } from "./styles";
 import { useNavigate } from "react-router-dom";
 import { createMarkup } from "utils";

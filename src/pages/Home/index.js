@@ -20,11 +20,11 @@ function Index() {
       sessionStorage.setItem("scrollPosition", e.target.scrollTop);
 
       const { scrollHeight, scrollTop, clientHeight } = e.target;
-      if (!fetching && scrollHeight - scrollTop <= clientHeight * 1.5) {
+      if (!fetching && Math.ceil(scrollHeight - scrollTop - clientHeight) <= 1 && hasNextPage) {
         fetching = true;
-        if (hasNextPage) fetchNextPage();
-        fetching = false;
+        fetchNextPage();
       }
+      fetching = false;
     };
 
     const element = divRef.current;
