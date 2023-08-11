@@ -16,13 +16,13 @@ function Index() {
       });
     }
 
-    const handleScroll = (e) => {
+    const handleScroll = async (e) => {
       sessionStorage.setItem("scrollPosition", e.target.scrollTop);
 
       const { scrollHeight, scrollTop, clientHeight } = e.target;
       if (!fetching && Math.ceil(scrollHeight - scrollTop - clientHeight) <= 1 && hasNextPage) {
         fetching = true;
-        fetchNextPage();
+        await fetchNextPage();
       }
       fetching = false;
     };
